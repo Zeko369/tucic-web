@@ -1,0 +1,7 @@
+.icon123 {
+  transition: transform 0.2s;
+}
+
+.icon123:hover {
+  transform: translate(0px, -20px) scale(1.1);
+}
