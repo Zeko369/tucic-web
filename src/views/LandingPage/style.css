@@ -1,16 +1,5 @@
 .foobar .webshop123 {
-  visibility: hidden;
   transition: transform 0.2s;
-}
-
-@media (hover: none) {
-  .foobar .webshop123 {
-    visibility: visible;
-  }
-}
-
-.foobar:hover .webshop123 {
-  visibility: visible;
 }
 
 .foobar .webshop123:hover {

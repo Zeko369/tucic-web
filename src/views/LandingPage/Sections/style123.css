@@ -5,3 +5,12 @@
 .icon123:hover {
   transform: translate(0px, -20px) scale(1.1);
 }
+
+.selected123 {
+  transform: translate(0px, -20px) scale(1.1);
+}
+
+.selected123 > div > h4 {
+  font-weight: 1200;
+  color: red;
+}

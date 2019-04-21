@@ -28,70 +28,82 @@ class ProductSection extends React.Component {
       <div className={classes.section}>
         <GridContainer>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="landing-page">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(0)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 0) ? 'selected123' : ''}`}
                 title="Izrada kljuceva"
                 icon={Chat}
                 iconColor="info"
                 vertical
               />
-            </Link>
+            </div>
+            {/* </Link> */}
           </GridItem>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="izrada-kljuceva">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(1)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 0 + 1) ? 'selected123' : ''}`}
                 title="Boje i lakovi"
                 icon={Foo}
                 iconColor="success"
                 vertical
               />
-            </Link>
+              </div>
+            {/* </Link> */}
           </GridItem>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="izrada-kljuceva">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(2)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 1 + 1) ? 'selected123' : ''}`}
                 title="Zeljeznarija"
                 icon={Bar}
                 iconColor="danger"
                 vertical
               />
-            </Link>
+              </div>
+            {/* </Link> */}
           </GridItem>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="izrada-kljuceva">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(3)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 2 + 1) ? 'selected123' : ''}`}
                 title="Graviranje"
                 icon={Chat_a}
                 iconColor="info"
                 vertical
               />
-            </Link>
+              </div>
+            {/* </Link> */}
           </GridItem>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="izrada-kljuceva">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(4)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 3 + 1) ? 'selected123' : ''}`}
                 title="Brusiona"
                 icon={Foo_a}
                 iconColor="success"
                 vertical
               />
-            </Link>
+              </div>
+            {/* </Link> */}
           </GridItem>
           <GridItem xs={6} sm={4} md={2}>
-            <Link to="izrada-kljuceva">
+            {/* <Link to="izrada-kljuceva"> */}
+            <div onClick={() => this.props.change(5)}>
               <InfoArea
-                className="icon123"
+                className={`icon123 ${(this.props.state.selected == 4 + 1) ? 'selected123' : ''}`}
                 title="Intervencije"
                 icon={Bar_a}
                 iconColor="danger"
                 vertical
               />
-            </Link>
+              </div>
+            {/* </Link> */}
           </GridItem>
         </GridContainer>
       </div>

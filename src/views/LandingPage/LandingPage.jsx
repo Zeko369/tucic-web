@@ -26,10 +26,32 @@ import WorkSection from "./Sections/WorkSection.jsx";
 import logo from 'assets/img/logo.svg';
 import image from "assets/img/bg.jpg";
 
-const dashboardRoutes = [];
+import ProfilePage from './foo';
 
+const dashboardRoutes = [];
 class LandingPage extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      selected: 0
+    };
+
+    this.change = this.change.bind(this);
+  }
+
+  change(to_id){
+    this.setState({selected: to_id});
+    console.log(to_id)
+  }
+
   render() {
+    let selectedDiv = <div>{
+      this.state.selected == 0 ? <ProfilePage/> :
+      this.state.selected == 1 ? <a>FOOOO</a> :
+      this.state.selected == 2 ? <a>FOOOOdsafsdf</a> :
+      this.state.selected == 3 ? <a>FOOasdasdasdasdOO</a> :
+      this.state.selected == 4 ? <a>FOOO786234876234O</a> : <a>PET</a>
+    }</div>;
     const { classes, ...rest } = this.props;
     return (
       <div>
@@ -56,7 +78,12 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <ProductSection />
+            <ProductSection change={this.change} state={this.state} />
+
+            {selectedDiv}
+
+            <br/>
+
             <div
               className="foobar"
               style={{
