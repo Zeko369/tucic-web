@@ -1,0 +1,106 @@
+.myContainer {
+  position: relative;
+  width: 90%;
+  left: 5%;
+}
+
+.centered {
+  text-align: center;
+  height: 200px;
+}
+
+.kruzic {
+  position: relative;
+  margin: auto;
+  width: 90%;
+}
+
+.kruzic img {
+  width: 80%;
+}
+
+.centered:hover .icon-and-text {
+  opacity: 0.5;
+}
+
+.centered:hover .buton {
+  display: block;
+}
+
+.buton {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 70%;
+  text-align: center;
+}
+
+.mainLogo {
+  max-width: 80%;
+}
+
+.card-icon {
+  height: 240px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-icon {
+    height: 200px;
+  }
+}
+
+.text-card {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+}
+
+.pagin {
+  width: 40px;
+  height: 8px;
+  border-radius: 2px;
+  margin: 8px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.pagin.current {
+  background-color: #222;
+}
+
+.pagin-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagin-image {
+  height: 400px;
+  position: relative;
+  margin: auto;
+  display: block;
+}
+
+.kruzic123 {
+  background-color: #ed1c24;
+}
+
+.kruzic123 i {
+  color: #fff;
+}
+
+.bg-bottom {
+  background: linear-gradient(120deg, #333 50%, #666 100%) !important;
+}
+
+.imageOnSection img {
+  padding: 20px;
+  border-radius: 0px;
+}
+
+.description {
+  padding-top: 20px;
+  text-align: left;
+}

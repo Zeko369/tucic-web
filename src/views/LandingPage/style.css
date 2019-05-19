@@ -1,7 +1,0 @@
-.foobar .webshop123 {
-  transition: transform 0.2s;
-}
-
-.foobar .webshop123:hover {
-  transform: translate(0px, -10px) scale(1.05);
-}
