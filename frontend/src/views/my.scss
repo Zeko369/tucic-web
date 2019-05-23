@@ -44,6 +44,12 @@
   height: 240px;
 }
 
+@media screen and (min-width: 980px) {
+  .card-icon {
+    height: 170px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .card-icon {
     height: 200px;
@@ -77,7 +83,7 @@
 }
 
 .pagin-image {
-  height: 400px;
+  max-width: 100%;
   position: relative;
   margin: auto;
   display: block;
@@ -103,4 +109,33 @@
 .description {
   padding-top: 20px;
   text-align: left;
+}
+
+.headroom--not-top {
+  background-color: #333 !important;
+}
+
+.headerCardImage {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+}
+
+.messageButton {
+  float: right;
+  margin-top: 16px;
+}
+
+.text-card-main {
+  padding-top: 100px;
+}
+
+.my-card {
+  margin-top: -100px !important;
+}
+
+@media screen and (min-width: 980px) {
+  .my-card {
+    margin-top: -300px !important;
+  }
 }

@@ -126,26 +126,21 @@ class SectionPage extends React.Component {
           </div>
           <section className="section">
             <Container>
-              <Card className="card-profile shadow mt--300">
-                <div className="px-4">
-                  <Row className="justify-content-center">
-                    <Col className="order-lg-1" lg="3">
+              <Card className="card-profile shadow my-card">
+                <div className="px-4 card-container-my">
+                  <div className="messageButton">
+                    <HashLink smooth to={`/#contact`} className="btn btn-danger btn-sm float-right">
+                      Message
+                    </HashLink>
+                  </div>
+                  <Row>
+                    <Col xs="3" lg="3" className="headerCardImage">
                       <div className="card-profile-image imageOnSection">
                         <img
                           alt={item.text}
                           className="bg-white"
                           src={item.image}
                         />
-                      </div>
-                    </Col>
-                    <Col
-                      className="order-lg-3 text-lg-right align-self-lg-center"
-                      lg="4"
-                    >
-                      <div className="card-profile-actions py-4 mt-lg-0">
-                        <HashLink smooth to={`/#contact`} className="btn btn-danger btn-sm float-right">
-                          Message
-                        </HashLink>
                       </div>
                     </Col>
                     <Col className="order-lg-2" lg="4">
@@ -155,7 +150,7 @@ class SectionPage extends React.Component {
                       </div>
                     </Col>
                   </Row>
-                  <div className="mt-5 py-5 text-center">
+                  <div className="text-center text-card-main">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <div className="description">

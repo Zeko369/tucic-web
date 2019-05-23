@@ -47,15 +47,11 @@ class Landing extends React.Component {
 
     this.state = {
       current_image: 0,
-      max_image: 4,
-      timeout: 0
+      timeout: 0,
+      images: [{url: ''}]
     }
 
     this.change_image = this.change_image.bind(this);
-  }
-
-  componentDidMount() {
-    this.carouselIntevral = setInterval(this.change_image, 5000);
   }
 
   componentWillUnmount () {
@@ -64,11 +60,11 @@ class Landing extends React.Component {
   }
 
   change_image() {
-    const { current_image, max_image, timeout } = this.state;
+    const { current_image, images, timeout } = this.state;
     if(timeout > 0){
       this.setState({timeout: timeout - 1});
     } else {
-      this.setState({current_image: max_image === current_image + 1 ? 0 : current_image + 1});
+      this.setState({current_image: images.length === current_image + 1 ? 0 : current_image + 1});
     }
   }
 
@@ -76,6 +72,15 @@ class Landing extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+
+    fetch('http://localhost:5000/api/homepage/actual').then(
+      (data) => data.json()
+      ).then(
+        (data) => {
+          this.setState({images: data});
+        }
+    ).catch((err) => console.error(err));
+    this.carouselIntevral = setInterval(this.change_image, 5000);
   }
 
   setItem(i) {
@@ -110,28 +115,11 @@ class Landing extends React.Component {
       }
     ];
 
-    const selected = [
-      {
-        text: 'Ovo je na akciji',
-        image: image_pagi_1
-      },
-      {
-        text: 'Ovo je pokvareno pa evo 50%',
-        image: image_pagi_2
-      },
-      {
-        text: 'Ovo se ne prodaje :)',
-        image: image_pagi_3
-      },
-      {
-        text: 'Ovo su opozvali jer je opasno pa evo 25% popusta',
-        image: image_pagi_4
-      }
-    ]
+    const { images, current_image } = this.state;
 
     let lines = [];
-    for(let i = 0; i < this.state.max_image; i++) {
-      lines.push(<div key={`something${i}`} onClick={() => this.setItem(i)} className={i === this.state.current_image ? 'current pagin' : 'pagin'}></div>)
+    for(let i = 0; i < images.length; i++) {
+      lines.push(<div key={`something${i}`} onClick={() => this.setItem(i)} className={i === current_image ? 'current pagin' : 'pagin'}></div>)
     }
 
     return (
@@ -234,7 +222,7 @@ class Landing extends React.Component {
 
                     <ul className="list-unstyled mt-5">
                       {
-                        selected.map((item, key) => (
+                        images.map((item, key) => (
                           <li className="py-2" key={`${key}${item}`}>
                             <div className="d-flex align-items-center">
                               <div>
@@ -259,7 +247,7 @@ class Landing extends React.Component {
                 </Col>
                 <Col md="8">
                   <div className="pagination-images">
-                    <img src={selected[this.state.current_image].image} className="pagin-image" alt={selected[this.state.current_image].image}/>
+                    <img src={images[this.state.current_image].url} className="pagin-image" alt={images[this.state.current_image].url}/>
                     <hr/>
                     <div className="pagination">
                       <div className="pagin-container">
