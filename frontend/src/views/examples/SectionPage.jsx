@@ -2,7 +2,6 @@ import React from "react";
 
 // reactstrap components
 import { Card, Container, Row, Col } from "reactstrap";
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 // core components
@@ -17,7 +16,6 @@ import image5 from 'assets/img/small-icons/knife.png';
 import image6 from 'assets/img/small-icons/van.svg';
 
 import bg_image from 'assets/img/theme/top-bg.png';
-import logo from 'assets/img/logo.svg';
 
 class SectionPage extends React.Component {
   componentDidMount() {
@@ -85,7 +83,7 @@ class SectionPage extends React.Component {
     ];
 
     const { name } = this.props.match.params;
-    const item = items.filter(item => item.text.replace(/ /g, '_') == name)[0];
+    const item = items.filter(item => item.text.replace(/ /g, '_') === name)[0];
 
     return (
       <>

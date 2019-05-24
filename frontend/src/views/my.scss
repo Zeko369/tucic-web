@@ -17,6 +17,7 @@
 
 .kruzic img {
   width: 80%;
+  max-width: 150px;
 }
 
 .centered:hover .icon-and-text {
@@ -47,6 +48,16 @@
 @media screen and (min-width: 980px) {
   .card-icon {
     height: 170px;
+  }
+
+  .centered {
+    text-align: center;
+    height: 250px;
+  }
+
+  .kruzic img {
+    width: 80%;
+    max-width: 100px !important;
   }
 }
 
@@ -138,4 +149,13 @@
   .my-card {
     margin-top: -300px !important;
   }
+}
+
+.headerImage {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.actual-items-div {
+  cursor: pointer;
 }

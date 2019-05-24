@@ -26,11 +26,6 @@ import image4 from 'assets/img/small-icons/3d-printer.svg';
 import image5 from 'assets/img/small-icons/knife.png';
 import image6 from 'assets/img/small-icons/van.svg';
 
-import image_pagi_1 from 'assets/img/theme/profile.jpg'
-import image_pagi_2 from 'assets/img/theme/landing.jpg'
-import image_pagi_3 from 'assets/img/theme/team-1-800x800.jpg'
-import image_pagi_4 from 'assets/img/theme/profile.jpg'
-
 import logo from 'assets/img/logo.svg';
 
 import bg_image from 'assets/img/theme/top-bg.png';
@@ -48,7 +43,8 @@ class Landing extends React.Component {
     this.state = {
       current_image: 0,
       timeout: 0,
-      images: [{url: ''}]
+      images: [{url: ''}],
+      text: ''
     }
 
     this.change_image = this.change_image.bind(this);
@@ -77,7 +73,8 @@ class Landing extends React.Component {
       (data) => data.json()
       ).then(
         (data) => {
-          this.setState({images: data});
+          const {items, text} = data;
+          this.setState({images: items, text: text});
         }
     ).catch((err) => console.error(err));
     this.carouselIntevral = setInterval(this.change_image, 5000);
@@ -129,7 +126,7 @@ class Landing extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default" style={{backgroundImage: `url(${bg_image})`}}>
+              <div className="shape shape-style-1 shape-default headerImage" style={{backgroundImage: `url(${bg_image})`}}>
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
@@ -137,7 +134,7 @@ class Landing extends React.Component {
                     <Col lg="6">
                       <img className="mainLogo" src={logo} alt="Logo"/>
                       <p className="lead text-white">
-                        Ovdje tu treba ici neki text, ne predug ali ne bas ni jedna kratka recenica, ovo je recimo ok, hmm mozda malo duze, O VIDI FLASA za vodu...
+                        Naizgled mali kvartovski dućan, s opisom <br/>asortimana: "Od igle do lokomitve". <br/>Istarzite nasu ponudu i sami se uvjerite!
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -214,17 +211,13 @@ class Landing extends React.Component {
                       <i className="ni ni-bell-55" />
                     </div>
                     <h3>Aktualno</h3>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
+                    <p>{ this.state.text }</p>
 
                     <ul className="list-unstyled mt-5">
                       {
                         images.map((item, key) => (
                           <li className="py-2" key={`${key}${item}`}>
-                            <div className="d-flex align-items-center">
+                            <div className="d-flex align-items-center actual-items-div" onClick={() => this.setItem(key)}>
                               <div>
                                 <Badge
                                   className="badge-circle mr-3 kruzic123"
@@ -263,12 +256,12 @@ class Landing extends React.Component {
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">
-                  <h2 className="display-3 text-white">Build something</h2>
+                  <h2 className="display-3 text-white">O nama</h2>
                   <p className="lead text-white">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
+                    Utemeljeni smo 1994.god., poznatiji kao zeljeznarija Spansko.
+                    Nas tim cine dobro upuceni radnici od kojih uvijek mozete dobiti kvalitetan savijet i preporuku za artikl koji trazite.
+                    Prioritet nam je da svaki kupac bude zadovoljan asortimanom i uslugom koju nudimo - zadvoljan kupac,
+                    garancija su za daljnji razvoj i prospiritet tvrtke. 
                   </p>
                 </Col>
               </Row>
@@ -277,30 +270,31 @@ class Landing extends React.Component {
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-email-83" />
                   </div>
-                  <h5 className="text-white mt-3">Building tools</h5>
+                  <h5 className="text-white mt-3">Email</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Racunovodstvo: zeljko.luzija@zg.t-com.hr<br/>
+                    Usluge graviranja: tucicdoo@gmail.com 
                   </p>
                 </Col>
                 <Col lg="4">
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-world" />
                   </div>
-                  <h5 className="text-white mt-3">Grow your market</h5>
+                  <h5 className="text-white mt-3">Lokacija</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Ulica Alberta Fortisa 16<br/>
+                    (U blizini trznice spansko, u istoj zgradi s Erste bankom)
                   </p>
                 </Col>
                 <Col lg="4">
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-mobile-button" />
                   </div>
-                  <h5 className="text-white mt-3">Launch time</h5>
+                  <h5 className="text-white mt-3">Kontakt</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Ducan: 01 3898 230<br/>
+                    Racunovodstvo: +385 91 3863 076<br/>
+                    Direktor: +385 91 3898 230
                   </p>
                 </Col>
               </Row>
@@ -328,10 +322,7 @@ class Landing extends React.Component {
                 <Col lg="8" id="contact">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Want to work with us?</h4>
-                      <p className="mt-0">
-                        Your project is very important to us.
-                      </p>
+                      <h4 className="mb-1">Suradujte s nama</h4>
                       <FormGroup
                         className={classnames("mt-5", {
                           focused: this.state.nameFocused
@@ -344,7 +335,7 @@ class Landing extends React.Component {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            placeholder="Your name"
+                            placeholder="Ime i prezime"
                             type="text"
                             onFocus={e => this.setState({ nameFocused: true })}
                             onBlur={e => this.setState({ nameFocused: false })}
@@ -363,7 +354,7 @@ class Landing extends React.Component {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            placeholder="Email address"
+                            placeholder="Email adresa"
                             type="email"
                             onFocus={e => this.setState({ emailFocused: true })}
                             onBlur={e => this.setState({ emailFocused: false })}
@@ -375,7 +366,7 @@ class Landing extends React.Component {
                           className="form-control-alternative"
                           cols="80"
                           name="name"
-                          placeholder="Type a message..."
+                          placeholder="Poruka..."
                           rows="4"
                           type="textarea"
                         />
@@ -384,11 +375,11 @@ class Landing extends React.Component {
                         <Button
                           block
                           className="btn-round"
-                          color="default"
+                          color="danger"
                           size="lg"
                           type="button"
                         >
-                          Send Message
+                          Posalji upit
                         </Button>
                       </div>
                     </CardBody>
