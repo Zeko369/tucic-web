@@ -72,13 +72,14 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    fetch("http://localhost:5000/api/homepage/actual")
-      .then(data => data.json())
-      .then(data => {
-        const { items, text } = data;
-        this.setState({ images: items, text: text });
-      })
-      .catch(err => console.error(err));
+    fetch('http://zekan.tk:54321/api/homepage/actual').then(
+      (data) => data.json()
+      ).then(
+        (data) => {
+          const {items, text} = data;
+          this.setState({images: items, text: text});
+        }
+    ).catch((err) => console.error(err));
     this.carouselIntevral = setInterval(this.change_image, 5000);
   }
 
@@ -288,7 +289,7 @@ class Landing extends React.Component {
                 </Col>
               </Row>
               <Row className="row-grid mt-5">
-                <Col lg="4">
+                <Col lg="4" style={{textAlign: 'center'}}>
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-email-83" />
                   </div>
@@ -299,7 +300,7 @@ class Landing extends React.Component {
                     Usluge graviranja: tucicdoo@gmail.com
                   </p>
                 </Col>
-                <Col lg="4">
+                <Col lg="4" style={{textAlign: 'center'}}>
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-world" />
                   </div>
@@ -310,7 +311,7 @@ class Landing extends React.Component {
                     (U blizini trznice spansko, u istoj zgradi s Erste bankom)
                   </p>
                 </Col>
-                <Col lg="4">
+                <Col lg="4" style={{textAlign: 'center'}}>
                   <div className="icon icon-lg icon-shape shadow rounded-circle kruzic123">
                     <i className="ni ni-mobile-button" />
                   </div>

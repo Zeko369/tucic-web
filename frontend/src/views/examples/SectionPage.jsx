@@ -24,7 +24,7 @@ class SectionPage extends React.Component {
     // this.refs.main.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    fetch("http://localhost:5000/api/homepage/actual")
+    fetch("http://zekan.tk:54321/api/homepage/actual")
       .then(data => data.json())
       .then(data => {
         const { items, text } = data;
