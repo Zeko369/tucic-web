@@ -9484,7 +9484,7 @@ textarea[resize="horizontal"] {
   font-size: .875rem;
   letter-spacing: .05px; }
   .navbar-brand img {
-    height: 30px; }
+    height: 40px; }
 
 .navbar-dark .navbar-brand {
   color: #fff; }
@@ -10603,7 +10603,7 @@ article h5 + figure {
 .headroom--not-top {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  background-color: #172b4d !important;
+  /* background-color: #172b4d !important; */
   box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1); }
 
 .noUi-target,

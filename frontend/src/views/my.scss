@@ -94,7 +94,8 @@
 }
 
 .pagin-image {
-  max-width: 100%;
+  // max-width: 100%;
+  height: 400px;
   position: relative;
   margin: auto;
   display: block;
@@ -158,4 +159,27 @@
 
 .actual-items-div {
   cursor: pointer;
+}
+
+.headroom--not-top {
+  background-color: #252525 !important;
+}
+
+.navbar-brand img {
+  height: 50px !important;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.foobar123 {
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+html {
+  font-family: 'Nunito', sans-serif !important;
 }
