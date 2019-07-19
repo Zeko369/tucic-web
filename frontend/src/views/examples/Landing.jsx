@@ -345,7 +345,7 @@ class Landing extends React.Component {
           <section className="section section-lg pt-lg-0 section-contact-us">
             <Container>
               <Row className="justify-content-center mt--300">
-                <Col lg="8" id="contact">
+                <Col lg="8">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
                       <h4 className="mb-1">Suradujte s nama</h4>
@@ -397,7 +397,7 @@ class Landing extends React.Component {
                           type="textarea"
                         />
                       </FormGroup>
-                      <div>
+                      <div id="contact">
                         <Button
                           block
                           className="btn-round"
