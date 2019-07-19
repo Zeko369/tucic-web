@@ -415,7 +415,8 @@ class Landing extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter id="contact" />
+        <SimpleFooter />
+        <div id="contact" />
       </React.Fragment>
     );
   }
