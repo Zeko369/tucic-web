@@ -149,16 +149,17 @@ class Landing extends React.Component {
                         Istarzite nasu ponudu i sami se uvjerite!
                       </p>
                       <div className="btn-wrapper">
-                        <Button
-                          className="btn-icon mb-3 mb-sm-0"
-                          color="danger"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                        <Link
+                          to={`/webshop`}
+                          className="btn btn-icon mb-3 mb-sm-0 btn-danger"
                         >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                          <span className="btn-inner--icon">
+                            <i className="fa fa-shopping-cart mr-2" />
                           </span>
-                          <span className="btn-inner--text">Webshop</span>
-                        </Button>
+                          <span className="nav-link-inner--text ml-1">
+                            Webshop
+                          </span>
+                        </Link>
                       </div>
                     </Col>
                   </Row>

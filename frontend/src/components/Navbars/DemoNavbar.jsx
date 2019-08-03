@@ -117,17 +117,19 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
-                      className="btn-icon"
-                      color="danger"
-                      href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar"
-                      target="_blank"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-shopping-cart mr-2" />
-                      </span>
-                      <span className="nav-link-inner--text ml-1">Webshop</span>
-                    </Button>
+                    {!this.props.webshop && (
+                      <Link
+                        to={`/webshop`}
+                        className="btn btn-icon mb-3 mb-sm-0 btn-danger"
+                      >
+                        <span className="btn-inner--icon">
+                          <i className="fa fa-shopping-cart mr-2" />
+                        </span>
+                        <span className="nav-link-inner--text ml-1">
+                          Webshop
+                        </span>
+                      </Link>
+                    )}
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
